@@ -18,7 +18,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         
-    - name: Make gradlew executable
+    - name: CHMOD for gradlew
       run: chmod +x ./gradlew
       
     - name: Thundra Gradle Test Instrumentation
