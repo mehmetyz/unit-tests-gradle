@@ -22,4 +22,4 @@ jobs:
       with:
         apikey: ${{secrets.THUNDRA_API_KEY}}
         project_id: ${{secrets.THUNDRA_PROJECT_ID}}
-        command: ./gradlew build
+        command: sudo ./gradlew build
