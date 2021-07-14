@@ -17,13 +17,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        
-    - name: CHMOD for gradlew
-      run: chmod +x ./gradlew
-      
     - name: Thundra Gradle Test Instrumentation
       uses: thundra-io/thundra-gradle-test-action@v1
       with:
         apikey: ${{secrets.THUNDRA_API_KEY}}
         project_id: ${{secrets.THUNDRA_PROJECT_ID}}
-        command: ls && sudo ./gradlew build
+        command: chmod +x ./gradlew && ./gradlew build
