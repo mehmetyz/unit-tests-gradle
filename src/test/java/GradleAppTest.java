@@ -1,3 +1,4 @@
+import models.common.Vehicle;
 import models.vehicle.Airplane;
 import models.vehicle.Car;
 import models.vehicle.Ship;
@@ -22,7 +23,7 @@ class GradleAppTest {
     public void testAddingCar(){
         app.addCar("BMW","M5",2020);
         assertTrue(app.hasVehicle());
-        var car = app.getVehicle("BMW","M5",2020);
+        Vehicle car = app.getVehicle("BMW","M5",2020);
         assertNotNull(car);
         assertEquals("Car, BMW M5 - 2020 year model", car.getTextOfVehicle());
     }
@@ -31,7 +32,7 @@ class GradleAppTest {
     public void testAddingAirplane(){
         app.addAirplane("Boeing", "747", 2017,"United States");
         assertTrue(app.hasVehicle());
-        var airplane = app.getVehicle("Boeing","747",2017);
+        Vehicle airplane = app.getVehicle("Boeing","747",2017);
         assertNotNull(airplane);
         assertEquals("Airplane, Boeing - 747, United States (2017 year model)",airplane.getTextOfVehicle());
     }
@@ -40,7 +41,7 @@ class GradleAppTest {
     public void testAddingShip(){
         app.addShip("USS Gladiator", "MCM-11", 2011,"United States");
         assertTrue(app.hasVehicle());
-        var ship = app.getVehicle("USS Gladiator","MCM-11",2011);
+        Vehicle ship = app.getVehicle("USS Gladiator","MCM-11",2011);
         assertNotNull(ship);
         assertEquals("Ship, USS Gladiator - MCM-11, United States (2011 year model)",ship.getTextOfVehicle());
     }
@@ -50,7 +51,7 @@ class GradleAppTest {
         app.addTruck("Scania","R800",2018);
         assertTrue(app.hasVehicle());
 
-        var truck = app.getVehicle("Scania","R800",2018);
+        Vehicle truck = app.getVehicle("Scania","R800",2018);
         assertNotNull(truck);
         assertEquals("Truck, Scania R800 - 2018 year model",truck.getTextOfVehicle());
     }
@@ -74,10 +75,10 @@ class GradleAppTest {
         app.addTruck("Scania","R800",2018);
 
         assertTrue(app.hasVehicle());
-        var car = app.getVehicle("BMW","M5",2020);
-        var airplane = app.getVehicle("Boeing","747",2017);
-        var ship = app.getVehicle("USS Gladiator", "MCM-11",2011);
-        var truck  = app.getVehicle("Scania","R800",2018);
+        Vehicle car = app.getVehicle("BMW","M5",2020);
+        Vehicle airplane = app.getVehicle("Boeing","747",2017);
+        Vehicle ship = app.getVehicle("USS Gladiator", "MCM-11",2011);
+        Vehicle truck  = app.getVehicle("Scania","R800",2018);
 
         assertNotNull(car);
         assertNotNull(airplane);
