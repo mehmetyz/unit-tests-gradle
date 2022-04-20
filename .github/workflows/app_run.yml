@@ -17,13 +17,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Thundra Gradle Test Instrumentation
-      uses: thundra-io/thundra-gradle-test-action@v1
+    - name: Run Gradle
+      run: ./gradlew build
+      
+    - name: Foresight Test Report Uploader
+      uses: actions/upload-artifact@v2
       with:
-        apikey: ${{secrets.THUNDRA_API_KEY}}
-        project_id: ${{secrets.THUNDRA_PROJECT_ID}}
-        command: chmod +x ./gradlew && ./gradlew build
-      env:
-          THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.us/v1
-          THUNDRA_AGENT_BROKER_ENABLE: false
-          THUNDRA_AGENT_REPORT_UPLOAD_REST_URL: https://upload.thundra.us
+        name: test-result-junit
+        path: ./build/test-results/test/
