@@ -3,7 +3,7 @@
 
 name: Java CI with Gradle
 
-on: [push]
+on: [push, workflow_dispatch]
 
 env:
   FORESIGHT_UPLOADER_SIGNER_URL: https://upload.thundra.us
